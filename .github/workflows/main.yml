@@ -19,10 +19,10 @@ jobs:
           export DOCKER_CLI_EXPERIMENTAL=enabled
           repo="jleekwong/privatebin"
           source .github/workflows/utils.sh
-          #private_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
-          #echo $private_arm_sha
-          #nginx_arm_sha=$(get_manifest_sha "treehouses/nginx:latest" "arm")
-          #echo $nginx_arm_sha
+          private_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
+          echo $private_arm_sha
+          nginx_arm_sha=$(get_manifest_sha "treehouses/nginx:latest" "arm")
+          echo $nginx_arm_sha
           #flag_arm=$(is_base "treehouses/nginx@"$nginx_arm_sha "$repo@"$private_arm_sha)
           #echo $flag_arm
           #private_amd64_sha=$(get_manifest_sha "$repo:latest" "amd64")
