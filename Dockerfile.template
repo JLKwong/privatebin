@@ -1,0 +1,10 @@
+FROM {{base_image}}
+
+# php7.3-gd is needed for privatebin
+RUN apt-get update -y \
+    && apt-get install -y wget php libapache2-mod-php
+
+EXPOSE 80
+
+CMD ["-D","FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/apache2ctl"]
