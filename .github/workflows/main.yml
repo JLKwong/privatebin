@@ -18,7 +18,7 @@ jobs:
         run: |
           export DOCKER_CLI_EXPERIMENTAL=enabled
           repo="jleekwong/privatebin"
-          base="treehouses/apache"
+          base="treehouses/php-apache"
           source .github/workflows/utils.sh
           private_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
           echo $private_arm_sha
@@ -42,9 +42,9 @@ jobs:
           echo $flag
           if [[ $flag == true ]]; then
             docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-            build_image "treehouses/apache:latest" arm "$repo"
-            build_image "treehouses/apache:latest" amd64 "$repo"
-            build_image "treehouses/apache:latest" arm64 "$repo"
+            build_image "treehouses/php-apache:latest" arm "$repo"
+            build_image "treehouses/php-apache:latest" amd64 "$repo"
+            build_image "treehouses/php-apache:latest" arm64 "$repo"
             deploy_image "$repo" arm
             deploy_image "$repo" amd64
             deploy_image "$repo" arm64
@@ -58,4 +58,3 @@ jobs:
           else
             echo "no changes"
           fi
-          #docker build .
