@@ -1,6 +1,6 @@
-FROM jleekwong/php-apache:latest
+FROM treehouses/php-apache:latest
 
-RUN curl -L https://github.com/JLKwong/PrivateBin/archive/1.3.1.zip > /var/www/1.3.1.zip && \
+RUN curl -L https://github.com/hiroTochigi/PrivateBin/archive/1.3.1.zip > /var/www/1.3.1.zip && \
     apt-get update && \
     apt-get install -y unzip zlib1g-dev libpng-dev && \
     docker-php-ext-install gd && \
