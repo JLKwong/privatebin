@@ -58,3 +58,4 @@ jobs:
           else
             echo "no changes"
           fi
+          docker build .
