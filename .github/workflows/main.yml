@@ -20,7 +20,7 @@ jobs:
           repo="jleekwong/privatebin"
           base="treehouses/php-apache"
           source .github/workflows/utils.sh
-          private_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
+          #private_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
           #echo $private_arm_sha
           #base_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
           #echo $base_arm_sha
